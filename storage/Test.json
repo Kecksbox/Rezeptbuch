@@ -1,0 +1,29 @@
+{
+  "className": "model.TestModel",
+  "data": [
+    {
+      "name": "Pan",
+      "vorname": "Peter"
+    },
+    {
+      "name": "Pan",
+      "vorname": "Peter"
+    },
+    {
+      "name": "Pan",
+      "vorname": "Peter"
+    },
+    {
+      "name": "Pan",
+      "vorname": "Peter"
+    },
+    {
+      "name": "Pan",
+      "vorname": "Peter"
+    },
+    {
+      "name": "Pan",
+      "vorname": "Peter"
+    }
+  ]
+}

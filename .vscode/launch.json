@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "vmArgs": "--module-path C:\\Users\\malte\\jdk11\\javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "main.App",
+            "projectName": "RezeptBuch",
+        }
+    ]
+}
