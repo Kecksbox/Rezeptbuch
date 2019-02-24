@@ -1,0 +1,25 @@
+{
+  "className": "model.Rezept",
+  "data": [
+    {
+      "name": "Pfannkuchen",
+      "zutaten": [],
+      "arbeitsschritte": []
+    },
+    {
+      "name": "Hamburger",
+      "zutaten": [],
+      "arbeitsschritte": []
+    },
+    {
+      "name": "ChickenBurger",
+      "zutaten": [],
+      "arbeitsschritte": []
+    },
+    {
+      "name": "Cola",
+      "zutaten": [],
+      "arbeitsschritte": []
+    }
+  ]
+}

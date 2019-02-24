@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Constructor;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
@@ -16,11 +17,14 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public abstract class Repository<T extends Model> {
 
     protected String entityName;
 
-    private LinkedList<T> data = new LinkedList<T>();;
+    private ObservableList<T> data = FXCollections.observableArrayList();
 
     protected Repository(String entityName) {
         this.entityName = entityName;
@@ -34,6 +38,18 @@ public abstract class Repository<T extends Model> {
 
     public void remove(T instance) {
         this.data.remove(instance);
+    }
+
+    public ObservableList<T> findAll() {
+        return this.data;
+    }
+
+    public T findById(int id) {
+        return this.data.get(id);
+    }
+
+    public void deleteById(int id) {
+        this.data.remove(id);
     }
 
     public void persist() {
@@ -70,7 +86,7 @@ public abstract class Repository<T extends Model> {
             return "{}";
         }
         String result = "{";
-        result += '"' + "className" + '"' + ':' + this.data.getLast().getClass().getName() + ',';
+        result += '"' + "className" + '"' + ':' + this.data.get(0).getClass().getName() + ',';
 
         result += '"' + "data" + '"' + ':' + "[";
         for (int i = 0, len = this.data.size(); i < len; ++i) {
@@ -88,8 +104,6 @@ public abstract class Repository<T extends Model> {
     private void reCreateData(String json) {
         Gson gson = new Gson();
         JsonObject jsonObject = new JsonParser().parse(json).getAsJsonObject();
-        System.out.println(jsonObject);
-
         try {
             String className = jsonObject.get("className").toString();
             Class c = Class.forName(className.substring(1, className.length() - 1));

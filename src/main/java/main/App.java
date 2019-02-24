@@ -1,14 +1,19 @@
 package main;
-import com.google.gson.Gson;
 
+import entwurf.View;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.TestModel;
-import repository.TestRepository;
-import view.TestView;
+import model.Rezept;
+import repository.RezeptRepository;
+import view.RezeptFormular;
+import view.RezeptListe;
 
 public class App extends Application {
+
+	public static int width = 400;
+
+	public static int height = 400;
 	
 	private static App instance = new App();
 	
@@ -18,7 +23,7 @@ public class App extends Application {
 	
 	private Stage window;
 	
-	private TestView view = TestView.getInstance();
+	private View view = RezeptListe.getInstance();
 
 	@Override
 	public void start(Stage window) throws Exception {
@@ -33,9 +38,6 @@ public class App extends Application {
 	}
 
 	public static void main(String[] args) {
-		new TestModel("Pan", "Peter");
-		TestRepository.getInstance().persist();
 		launch(args);
 	}
 }
-

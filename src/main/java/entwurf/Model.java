@@ -11,9 +11,13 @@ public abstract class Model {
         return json;
     }
 
+    public void toRepository() {
+        Repository<Model> repository = this.getAssociatedRepository();
+        repository.add(this);
+    }
+
     protected String  getEntityName() {
-        String className = this.getClass().getSimpleName();
-        return className.substring(0, className.length() - 5);
+        return this.getClass().getSimpleName();
     }
 
     protected  Repository<Model> getAssociatedRepository() {
