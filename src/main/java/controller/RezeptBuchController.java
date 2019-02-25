@@ -19,7 +19,8 @@ public abstract class RezeptBuchController {
 
 	public static EventHandler<ActionEvent> newRezeptAction = new EventHandler<ActionEvent>() {
 
-		@Override public void handle(ActionEvent event) {
+		@Override
+		public void handle(ActionEvent event) {
 			Rezept newRezept = new Rezept();
 			newRezept.toRepository();
 			RezeptFormular.getInstance().setState(new HashMap<String, Object>() {
@@ -28,7 +29,7 @@ public abstract class RezeptBuchController {
 				}
 			});
 			App.redirectView(RezeptFormular.getInstance());
-		} 
+		}
 
 	};
 
@@ -53,8 +54,10 @@ public abstract class RezeptBuchController {
 		});
 	}
 
-	public static void submitRezeptFormular(Rezept selected, String name) {
+	public static void submitRezeptFormular(Rezept selected, String name, String zutaten, String arbeitsschritte) {
 		selected.setName(name);
+		selected.setZutaten(zutaten);
+		selected.setArbeitsschritte(arbeitsschritte);
 		RezeptRepository.getInstance().persist();
 
 		RezeptListe.getInstance().setState(new HashMap<String, Object>() {

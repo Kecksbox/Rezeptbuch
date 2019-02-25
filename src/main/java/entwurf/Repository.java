@@ -4,12 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.lang.reflect.Constructor;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
-import java.util.LinkedList;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -104,21 +102,21 @@ public abstract class Repository<T extends Model> {
     private void reCreateData(String json) {
         Gson gson = new Gson();
         JsonObject jsonObject = new JsonParser().parse(json).getAsJsonObject();
+        String className = jsonObject.get("className").toString();
         try {
-            String className = jsonObject.get("className").toString();
             Class c = Class.forName(className.substring(1, className.length() - 1));
 
             for (JsonElement dataElement : jsonObject.get("data").getAsJsonArray()) {
-                Object test = gson.fromJson(dataElement.toString(), c);
-                if (test instanceof Model) {
-                    this.add(((T) test));
+                Object instance = gson.fromJson(dataElement.toString(), c);
+                if (instance instanceof Model) {
+                    this.add(((T) instance));
                 } else {
                     throw new RuntimeException("wdaw");
                 }
             }
 
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException("wadawd");
+            throw new Error("The class corresponding to "+ className +" could not be resolved.");
         }
     }
 

@@ -4,9 +4,6 @@ import entwurf.View;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.Rezept;
-import repository.RezeptRepository;
-import view.RezeptFormular;
 import view.RezeptListe;
 
 public class App extends Application {
@@ -28,7 +25,7 @@ public class App extends Application {
 	@Override
 	public void start(Stage window) throws Exception {
 		instance.window = window;
-		instance.window.setTitle("Hello World!");
+		instance.window.setTitle("Rezepto");
 		instance.window.setScene(view);
 		instance.window.show();
 	}

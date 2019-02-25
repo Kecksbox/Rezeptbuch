@@ -2,24 +2,19 @@
   "className": "model.Rezept",
   "data": [
     {
-      "name": "Pfannkuchen",
-      "zutaten": [],
-      "arbeitsschritte": []
+      "name": "MehlMilch",
+      "zutaten": "1. Mehl\n2. Milch",
+      "arbeitsschritte": "1. Zusammenkippen"
     },
     {
-      "name": "Hamburger",
-      "zutaten": [],
-      "arbeitsschritte": []
+      "name": "EiSchaum",
+      "zutaten": "1. Eier",
+      "arbeitsschritte": "1. Rühren bis schäumt."
     },
     {
-      "name": "ChickenBurger",
-      "zutaten": [],
-      "arbeitsschritte": []
-    },
-    {
-      "name": "Cola",
-      "zutaten": [],
-      "arbeitsschritte": []
+      "name": "Wurstwasser",
+      "zutaten": "1. Glas Heißwürstchen",
+      "arbeitsschritte": "1. Würstchen dem Glas entnehmen\n2 Servieren"
     }
   ]
 }
