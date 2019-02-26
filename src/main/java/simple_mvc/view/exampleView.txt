@@ -1,0 +1,34 @@
+package view;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import entwurf.View;
+
+public class ExampleView extends View {
+
+	private static ExampleView instance;
+
+	public static ExampleView getInstance() {
+		if (ExampleView.instance == null) {
+			ExampleView.instance = new ExampleView();
+		}
+		return ExampleView.instance;
+	}
+
+	protected  Map<String, Object> getInitalState() {
+		Map<String, Object> state = new HashMap<>();
+ 
+        [(loop)
+        state.put([key], [value]);
+        ]
+
+		return state;
+	}
+
+	protected void render() {
+		[your prefered layout]layout = new [your prefered layout]();
+	    this.setRoot(layout);
+	}
+
+}

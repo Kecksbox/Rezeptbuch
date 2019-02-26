@@ -1,0 +1,17 @@
+package repository;
+
+import entwurf.Repository;
+
+public class ExampleRepository extends Repository<Rezept> {
+
+    private static ExampleRepository instance = new ExampleRepository();
+
+    public static ExampleRepository getInstance() {
+		  return ExampleRepository.instance;
+    }
+
+    private ExampleRepository() {
+        super([the entityName (String)]);
+    }
+
+}

@@ -20,15 +20,8 @@ javafx {
 }
 
 dependencies {
-    // compile 'com.thoughtworks.xstream:xstream:1.4.10'
 
-    // compile 'com.j256.ormlite:ormlite-core:5.0'
-    // compile 'com.j256.ormlite:ormlite-jdbc:5.0'
-
-    // compile 'org.apache.logging.log4j:log4j-api:2.10.0'
-    // compile 'org.apache.logging.log4j:log4j-core:2.10.0'
-
-    implementation 'com.google.code.gson:gson:2.8.5'
+    compile 'com.thoughtworks.xstream:xstream:1.4.10'
 
     compile 'org.openjfx:javafx-controls:11.0.1'
     

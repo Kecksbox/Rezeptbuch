@@ -1,0 +1,7 @@
+<com.sun.javafx.collections.ObservableListWrapper>
+  <project.model.Rezept>
+    <name>Eier</name>
+    <zutaten>ei</zutaten>
+    <arbeitsschritte>nei</arbeitsschritte>
+  </project.model.Rezept>
+</com.sun.javafx.collections.ObservableListWrapper>
