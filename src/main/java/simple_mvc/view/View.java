@@ -9,8 +9,18 @@ import javafx.scene.layout.StackPane;
 
 import project.App;
 
+/**
+ * @author Malte Heuser
+ */
 public abstract class View extends Scene {
 
+    /**
+     * The state of this view.
+     * 
+     * A keyValueMap, that maps Strings to Objects.
+     * It can be used during rendering to display dynamic content.
+     * To alter the state use setState.
+     */
     protected Map<String, Object> state;
 
     /**
@@ -22,7 +32,6 @@ public abstract class View extends Scene {
      */
     protected View() {
         super(new StackPane(), App.width, App.height);
-        int Test = App.width;
         this.state = getInitalState();
         this.initStyles();
         render();
@@ -30,6 +39,7 @@ public abstract class View extends Scene {
 
     /**
      * Updates the views state by overwriting the prevStates values where keys match.
+     * SetState is not permitted to add new keys.
      * 
      * @param update A keyValueMap.
      */

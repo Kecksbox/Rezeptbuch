@@ -15,8 +15,15 @@ import javafx.collections.ObservableList;
 import simple_mvc.model.Model;
 import simple_mvc.repository.converters.ObservableListConverter;
 
+/**
+ * @author Malte Heuser
+ */
 public abstract class Repository<T extends Model> {
 
+    /**
+     * A list of all instances of the corresponding Model,
+     * that were added to the Repsoitory.
+     */
     private ObservableList<T> data = FXCollections.observableArrayList();
 
     /**

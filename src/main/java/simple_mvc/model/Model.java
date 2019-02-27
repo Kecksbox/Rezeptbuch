@@ -11,6 +11,9 @@ import java.util.List;
 import simple_mvc.repository.Repository;
 import simple_mvc.utilities.ClassFinder;
 
+/**
+ * @author Malte Heuser
+ */
 public abstract class Model {
 
     /**
@@ -24,7 +27,7 @@ public abstract class Model {
     /**
      * Returns the name of this Class.
      */
-    protected String getEntityName() {
+    protected String getModelName() {
         return this.getClass().getSimpleName();
     }
 
@@ -52,9 +55,14 @@ public abstract class Model {
         }
     }
 
+    /**
+     * Finds a Repository with the expectedName in the project package.
+     * 
+     * @return The Class of a Repository with the expectedName.
+     */
     private Class<?> findRepositoryClass() {
         try {
-            String expectedRepositoryName = getEntityName() + "Repository";
+            String expectedRepositoryName = getModelName() + "Repository";
             for (Class<?> c : ClassFinder.getClasses("project")) {
                 if (c.getSimpleName().equals(expectedRepositoryName)) {
                     return c;

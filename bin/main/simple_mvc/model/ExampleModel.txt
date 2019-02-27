@@ -1,0 +1,9 @@
+package project.model;
+
+import simple_mvc.model.Model;
+
+public class ExampleModel extends Model {
+
+    // Properties + Getter and Setter here ...
+    
+}

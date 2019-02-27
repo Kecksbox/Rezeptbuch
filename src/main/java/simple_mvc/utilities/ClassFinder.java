@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
+/**
+ * @author Malte Heuser
+ */
 public abstract class ClassFinder {
      /**
      * Scans all classes accessible from the context class loader which belong to the given package and subpackages.
