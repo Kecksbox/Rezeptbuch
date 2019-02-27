@@ -1,2 +1,2 @@
 # SimpleMVC
-Bespielproject
+Beispielproject
