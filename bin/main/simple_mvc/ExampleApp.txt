@@ -3,13 +3,12 @@ package project;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import simple_mvc.view.View;
-import project.view.RezeptListe;
 
 public class App extends Application {
 
-	public static int width = 400;
+	public static int width = [The inital width of the Application];
 
-	public static int height = 400;
+	public static int height = [The inital height of the Application];
 
 	private static App instance = new App();
 
@@ -23,7 +22,7 @@ public class App extends Application {
 
 	private Stage window;
 
-	private View view = RezeptListe.getInstance();
+	private View view = [The inital View];
 
 	@Override
 	public void start(Stage window) throws Exception {

@@ -1,5 +1,7 @@
 package simple_mvc.view;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 
 import javafx.scene.Scene;
@@ -20,6 +22,7 @@ public abstract class View extends Scene {
      */
     protected View() {
         super(new StackPane(), App.width, App.height);
+        int Test = App.width;
         this.state = getInitalState();
         this.initStyles();
         render();
@@ -74,9 +77,26 @@ public abstract class View extends Scene {
      */
     private void initStyles() {
         // public stylesheet
+        this.loadStyleSheetAt("src/main/resources/css/globalStyles.css");
+        // local stylesheet
+        this.loadStyleSheetAt("src/main/resources/css/views/" + this.getClass().getSimpleName() + ".css");
+    }
 
-        // does not work :( (still here for later fix)
-        this.getStylesheets().add("./src/main/resource/css/globalStyles.css");
+    /**
+     * Adds the StyleSheet at the spezified rootPath and adds it if not existent.
+     */
+    private void loadStyleSheetAt(String rootPath) {
+        File f = new File(rootPath);
+        if(f.exists() == false || f.isDirectory()) { 
+            f.getParentFile().mkdirs(); 
+            try {
+                f.createNewFile();
+            } catch(IOException e) {
+                e.printStackTrace();
+                throw new Error("IOException occured while trying to create StyleSheet.");
+            }
+        }
+        this.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
     }
 
 }

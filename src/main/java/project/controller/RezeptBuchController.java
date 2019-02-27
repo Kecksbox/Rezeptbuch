@@ -29,14 +29,14 @@ public abstract class RezeptBuchController {
 					put("selected", newRezept);
 				}
 			});
-			App.redirectView(RezeptFormular.getInstance());
+			App.getInstance().redirectView(RezeptFormular.getInstance());
 		}
 
 	};
 
 	public static void editRezeptAction(int selectedIndex) {
 		Rezept selected = RezeptRepository.getInstance().findByIndex(selectedIndex);
-		App.redirectView(RezeptFormular.getInstance());
+		App.getInstance().redirectView(RezeptFormular.getInstance());
 		// set RezeptFormularState
 		RezeptFormular.getInstance().setState(new HashMap<String, Object>() {
 			{
@@ -66,7 +66,7 @@ public abstract class RezeptBuchController {
 				put("rezepte", RezeptBuchController.getRezepte());
 			}
 		});
-		App.redirectView(RezeptListe.getInstance());
+		App.getInstance().redirectView(RezeptListe.getInstance());
 	}
 
 }

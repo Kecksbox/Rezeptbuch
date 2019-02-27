@@ -46,7 +46,6 @@ public class RezeptListe extends View {
 		// addButton
 		Button addButton = new Button("new");
 		addButton.setOnAction(RezeptBuchController.newRezeptAction);
-		addButton.getStyleClass().add("addButton");
 
 		// editButton
 		Button editButton = new Button("edit");
